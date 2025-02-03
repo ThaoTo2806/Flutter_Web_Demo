@@ -32,4 +32,14 @@ class LoaiService {
       return [];
     }
   }
+
+  Future<List<dynamic>> getLoaiTin() async {
+    try {
+      Response response = await _dio.get("/loaitin");
+      return response.data['data'];
+    } catch (e) {
+      print("Lỗi khi gọi API loaitin: $e");
+      return [];
+    }
+  }
 }

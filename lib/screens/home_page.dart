@@ -35,6 +35,7 @@ class _HomePageState extends State<HomePage> {
               const SliderIntroduction(),
               // Thanh Navigation Bar
               const NavigationBarWidget(),
+              const SizedBox(height: 5),
               const BodyHome(),
             ],
           ),
