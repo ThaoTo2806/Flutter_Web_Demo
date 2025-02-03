@@ -3,6 +3,7 @@ import '../widgets/header.dart';
 import '../widgets/navigation_bar.dart';
 import '../widgets/drawer_menu.dart';
 import '../widgets/slider_introduction.dart';
+import '../widgets/body_home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,15 +23,21 @@ class _HomePageState extends State<HomePage> {
       key: scaffoldKey, // Gán key cho Scaffold
       drawer: const DrawerMenu(), // Menu bên trái
       body: SafeArea(
-        child: Column(
-          children: [
-            // Header với nút mở Drawer
-            Header(
-                searchController: searchController, scaffoldKey: scaffoldKey),
-            const SliderIntroduction(),
-            // Thanh Navigation Bar
-            const NavigationBarWidget(),
-          ],
+        child: SingleChildScrollView(
+          // Bọc trong SingleChildScrollView
+          child: Column(
+            children: [
+              // Header với nút mở Drawer
+              Header(
+                searchController: searchController,
+                scaffoldKey: scaffoldKey,
+              ),
+              const SliderIntroduction(),
+              // Thanh Navigation Bar
+              const NavigationBarWidget(),
+              const BodyHome(),
+            ],
+          ),
         ),
       ),
     );
